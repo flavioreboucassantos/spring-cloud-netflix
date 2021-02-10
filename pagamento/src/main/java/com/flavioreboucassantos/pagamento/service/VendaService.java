@@ -12,7 +12,6 @@ import com.flavioreboucassantos.pagamento.data.vo.VendaVO;
 import com.flavioreboucassantos.pagamento.entity.ProdutoVenda;
 import com.flavioreboucassantos.pagamento.entity.Venda;
 import com.flavioreboucassantos.pagamento.exception.ResourceNotFoundException;
-import com.flavioreboucassantos.pagamento.repository.ProdutoRepository;
 import com.flavioreboucassantos.pagamento.repository.ProdutoVendaRepository;
 import com.flavioreboucassantos.pagamento.repository.VendaRepository;
 
