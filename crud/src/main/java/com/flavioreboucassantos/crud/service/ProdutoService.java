@@ -19,7 +19,6 @@ public class ProdutoService {
 
 	@Autowired
 	public ProdutoService(ProdutoRepository produtoRepository) {
-		super();
 		this.produtoRepository = produtoRepository;
 	}
 
