@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8083
   servlet:
-    context-path: /crud
+    context-path: /auth
     
 spring: 
   application:
-    name: crud
+    name: auth
   jpa:
     show-sql: false
     hibernate:
@@ -16,22 +16,13 @@ spring:
   jmx:
     enabled: false
   datasource: 
-    url: jdbc:mysql://localhost:3306/crud?useTimezone=true&serverTimezone=GMT-3
+    url: jdbc:mysql://localhost:3306/auth?useTimezone=true&serverTimezone=GMT-3
     username: root
     password: 123456
-    
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: admin
-    password: admin
-    
-crud:
-  rabbitmq:
-    exchange: crud.exchange
-    routingkey: crud.produto.routingkey
 
 security:
   jwt:
     token:
       secret-key: Nt8ZeCNMZqmPJwvz
+      expire-length: 31536000000
+

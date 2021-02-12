@@ -28,10 +28,12 @@ public class VendaService {
 	}
 
 	public VendaVO create(VendaVO vendaVO) {
+		vendaVO.setId(null);
 		Venda venda = vendaRepository.save(Venda.create(vendaVO));
 		
 		List<ProdutoVenda> produtosSalvos = new ArrayList<>();
 		vendaVO.getProdutos().forEach(p -> {
+			p.setId(null);
 			ProdutoVenda pv = ProdutoVenda.create(p);
 			pv.setVenda(venda);
 			produtosSalvos.add(produtoVendaRepository.save(pv));

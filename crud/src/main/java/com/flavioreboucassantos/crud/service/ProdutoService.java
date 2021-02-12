@@ -27,6 +27,7 @@ public class ProdutoService {
 	}
 
 	public ProdutoVO create(ProdutoVO produtoVO) {
+		produtoVO.setId(null);
 		ProdutoVO retorno = ProdutoVO.create(produtoRepository.save(Produto.create(produtoVO)));
 		produtoSendMessage.sendMessage(new ProdutoVOMessage("create", retorno));
 		return retorno;
@@ -51,7 +52,7 @@ public class ProdutoService {
 		final Optional<Produto> optionalProduto = produtoRepository.findById(produtoVO.getId());
 
 		if (!optionalProduto.isPresent()) {
-			new ResourceNotFoundException("No records found for this ID");
+			throw new ResourceNotFoundException("No records found for this ID");
 		}
 
 		ProdutoVO retorno = ProdutoVO.create(produtoRepository.save(Produto.create(produtoVO)));
