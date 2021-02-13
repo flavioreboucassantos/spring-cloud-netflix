@@ -35,3 +35,12 @@ security:
   jwt:
     token:
       secret-key: Nt8ZeCNMZqmPJwvz
+      
+eureka:
+  instance: 
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registry/eureka
+  
+      
